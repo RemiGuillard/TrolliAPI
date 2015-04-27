@@ -11,7 +11,8 @@ var city = require('./routes/city');
 var app = express();
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/TrolliWeather', function(err) {
+
+mongoose.connect('mongodb://'+process.env.db_heroku_user+':'+process.env.db_heroku_pwd+'@'+process.env.db_heroku_host+':'+process.env.db_heroku_port+'/'+process.env.db_heroku_name, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {

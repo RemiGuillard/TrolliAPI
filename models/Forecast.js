@@ -16,6 +16,7 @@ var ForecastSchema = new mongoose.Schema({
     wind_speed_kmh: Number,
     wind_dir_16_pt: String,
     forecast_time: { type: Date, default: Date.now },
+    local_time: { type: Date, default: Date.now },
 
     astronomy: {
         moonrise: Date,
@@ -23,7 +24,14 @@ var ForecastSchema = new mongoose.Schema({
         sunrise: Date,
         sunset: Date,
     },
-    
+
+    daily_forecast: {
+        max_temp_C: Number,
+        min_temp_C: Number,
+        max_temp_F: Number,
+        min_temp_F: Number,
+        uv_index: Number,
+    },
     
 });
 
