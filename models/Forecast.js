@@ -1,8 +1,11 @@
 var mongoose = require('mongoose');
 
 var ForecastSchema = new mongoose.Schema({
+
+    city: {type: mongoose.Schema.Types.ObjectId, ref: 'City'},
+
     cloud_cover: Number,
-    temperature: Integer,
+    temperature: Number,
     weather_desc: String,
     feels_like_C: Number,
     feels_like_F: Number,
